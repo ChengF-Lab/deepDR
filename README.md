@@ -3,6 +3,8 @@
 
 ### 'dataset' directory
 Contain the gold standard drug-disease set and ten drug-related networks.
+### 'preprocessing' directory
+Contain the preprocessing code to generate PPMI matrix.
 ### 'PPMI' directory
 Contain the PPMI matrices of ten drug-related networks.
 ### Tutorial
