@@ -1,6 +1,6 @@
 %% Compute Jaccard Similarity Coefficient %%
 
-Nets = {'drugdrug', 'drugProtein', 'drugsideEffect'};
+Nets = {'drugProtein', 'drugsideEffect'};
 %Nets = {'diseaseProtein'};
 
 for i = 1 : length(Nets)
