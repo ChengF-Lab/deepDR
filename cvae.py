@@ -6,8 +6,7 @@ from torch import optim
 from torch.nn import functional
 from torch.utils.data import DataLoader
 import numpy as np
-from sklearn.model_selection import KFold
-from sklearn.cross_validation import StratifiedKFold
+from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import average_precision_score
 from torch.autograd import Variable
@@ -163,7 +162,7 @@ if __name__ == "__main__":
         test_auc_fold = []
         test_aupr_fold = []
         rs = np.random.randint(0, 1000, 1)[0]
-        kf = StratifiedKFold(data_set[:, 2], n_folds=5, shuffle=True, random_state=rs)
+        kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=rs).split(data_set, data_set[:, 2]) 
 
         for train_index, test_index in kf:
             DTItrain, DTItest = data_set[train_index], data_set[test_index]

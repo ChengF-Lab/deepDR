@@ -13,7 +13,7 @@ def build_AE(input_dim, encoding_dims):
     hidden_layer = input_layer
     for i in range(0, len(encoding_dims)):
         # generate hidden layer
-        if i == len(encoding_dims)/2:
+        if i == len(encoding_dims) // 2:
             hidden_layer = Dense(encoding_dims[i],
                                  activation='sigmoid',
                                  # activity_regularizer=regularizers.l1(10e-6),
@@ -48,7 +48,7 @@ def build_MDA(input_dims, encoding_dims):
     # hidden layers
     hidden_layers = []
     for j in range(0, len(input_dims)):
-        hidden_layers.append(Dense(encoding_dims[0]/len(input_dims),
+        hidden_layers.append(Dense(encoding_dims[0] // len(input_dims),
                                    # activity_regularizer=regularizers.l1(gamma[j]),
                                    activation='sigmoid')(input_layers[j]))
 
@@ -60,7 +60,7 @@ def build_MDA(input_dims, encoding_dims):
 
     # middle layers
     for i in range(1, len(encoding_dims)-1):
-        if i == len(encoding_dims)/2:
+        if i == len(encoding_dims) // 2:
             hidden_layer = Dense(encoding_dims[i],
                                  name='middle_layer',
                                  # kernel_regularizer=regularizers.l1(1e-5),
@@ -78,7 +78,7 @@ def build_MDA(input_dims, encoding_dims):
     # hidden layers
     hidden_layers = []
     for j in range(0, len(input_dims)):
-        hidden_layers.append(Dense(encoding_dims[-1]/len(input_dims),
+        hidden_layers.append(Dense(encoding_dims[-1] // len(input_dims),
                                    activation='sigmoid')(hidden_layer))
     # output layers
     output_layers = []
