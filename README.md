@@ -18,3 +18,7 @@ Contain the PPMI matrices of ten drug-related networks.
 ### Requirements
 deepDR is tested to work under Python 3.6  
 The required dependencies for deepDR  are Keras, PyTorch, TensorFlow, numpy, scipy, and scikit-learn.
+
+0. Install miniconda3.
+1. Clone the repository and `cd` into it.
+2. Run `conda env create -f environment.yml && conda activate deepdr`.
